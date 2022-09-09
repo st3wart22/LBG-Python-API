@@ -92,3 +92,30 @@ In a new terminal window use the command
 ~~~ bash
 behave .\features\restapp.feature
 ~~~
+
+### Example tests
+
+#### unit
+
+There are unit test included with this project.  We are testing the item building for the object that it retuens
+
+~~~python
+def test_item_builder_data(self):
+        """
+        Test to see if item_builder returns the correctly keyed dictionary object
+        based on raw data passed to it
+        """
+        expected = {'name': 'Tool', 'description': 'Hammer', 'price': 10.5, '_id': 99}
+        self.assertEqual(item_builder("Tool", "Hammer", 10.50, 99), expected)
+
+ If we test the builder and input  a name of "Tool", a description of "hammer", a price of 10.5 and an _id of 99 we can ex[pect object to be created
+
+
+###integrration
+
+An example 
+
+~~~python
+self.assertEqual(response.status_code, status.HTTP_201_CREATED)
+
+If we test the Create endpoint by sending a request with a method of post and a path of ~* we should expect the responmse to be a status code of 201 and status text Created
